@@ -12,7 +12,7 @@
     <!-- Header -->
     <header class="header">
       <div class="header__container">
-        <img src="./img/logo.svg" alt="Logo" />
+        <img class="logo-smol" src="./img/logo.svg" alt="Logo" />
         <div class="header__score score">
           <div class="score__inner">
             <strong class="score__title">Score</strong>
@@ -41,17 +41,19 @@
     <!-- Game zone picker -->
     <section class="game-zone-picker" id="gameZonePicker">
       <div class="game-zone-picker__container">
-        <div class="game-zone-picker__part part">
-          <h3 class="part-title">You picked</h3>
-          <img class="part-img" id="humanHand" src="./img/paper.svg" alt="" />
+        <div class="game-zone-picker__part-wrapper">
+          <div class="game-zone-picker__part part">
+            <h3 class="part-title">You picked</h3>
+            <img class="part-img" id="humanHand" src="./img/paper.svg" alt="" />
+          </div>
+          <div class="game-zone-picker__part part">
+            <h3 class="part-title">THE HOUSE PICKED</h3>
+            <img class="part-img" id="aiHand" src="./img/oval.svg" alt="" />
+          </div>
         </div>
         <div class="game-zone-picker__status status" id="status">
           <h2 class="status__title">You win</h2>
           <button class="status-refresh" id="refreshGame">Play again</button>
-        </div>
-        <div class="game-zone-picker__part part">
-          <h3 class="part-title">THE HOUSE PICKED</h3>
-          <img class="part-img" id="aiHand" src="./img/oval.svg" alt="" />
         </div>
       </div>
     </section>

@@ -110,11 +110,6 @@ body {
   background-position: center center;
 }
 
-.game-zone__button:nth-child(3) {
-  grid-column-start: 1;
-  grid-column-end: 3;
-}
-
 .game-zone__button {
   place-self: center;
   background-color: transparent;
@@ -122,6 +117,11 @@ body {
   border-radius: 50%;
   transition: box-shadow 0.3s ease;
   cursor: pointer;
+}
+
+.game-zone__button:nth-child(3) {
+  grid-column-start: 1;
+  grid-column-end: 3;
 }
 
 .game-zone__button:hover {
@@ -142,34 +142,40 @@ body {
 
 .game-zone-picker__container {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  width: 100%;
   max-width: 950px;
-  margin-left: auto;
-  margin-right: auto;
-  justify-content: space-between;
+  margin: 0 auto;
+  gap: 30px;
 }
 
+.game-zone-picker__part-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 938px;
+}
+
+/* Bo‘limlar */
 .game-zone-picker__part {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 10px;
 }
 
 .part-title {
-  margin-bottom: 63px;
-  color: white;
   font-size: 24px;
+  color: white;
+  text-align: center;
 }
 
 .part-img {
-  width: 198px;
-  height: 203px;
-  background-color: transparent;
-  border: none;
+  width: 293px;
+  height: 300px;
   border-radius: 50%;
   transition: box-shadow 0.3s ease;
-  cursor: pointer;
 }
 
 .part-img:hover {
@@ -177,47 +183,34 @@ body {
 }
 
 .game-zone-picker__status {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  display: none;
+  text-align: center;
 }
 
 .status__title {
-  font-family: "Barlow Semi" Condensed;
   font-size: 56px;
-  font-weight: 700;
-  line-height: 67.2px;
-  text-align: center;
   color: white;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
 }
 
 .status-refresh {
   padding: 15px 62px 14px 60px;
-  font-family: "Barlow Semi" Condensed;
   font-size: 16px;
-  font-weight: 600;
-  line-height: 19.2px;
-  letter-spacing: 2.5px;
-  text-align: left;
+  background-color: white;
+  color: #3b4262;
+  border: none;
   border-radius: 8px;
+  cursor: pointer;
 }
 
 .status-refresh:hover {
-  color: darkblue;
+  background-color: #dedede;
   transform: scale(1.2);
-  transition: 2s;
+  transition: 0.3s ease;
 }
-
 /* Rules */
-#rules-wrapper {
-  position: relative;
-}
-
 .rules-btn {
-  position: absolute;
-  bottom: 0;
+  position: fixed;
+  bottom: 32px;
   right: 32px;
   background-color: transparent;
   padding: 11px 36px 10px 37px;
@@ -283,4 +276,114 @@ body {
   display: flex;
   width: 305px;
   height: 271px;
+}
+
+@media (max-width: 612px) {
+  .game-zone-picker__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .game-zone-picker__part-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    width: 100%;
+    order: 1;
+  }
+
+  .game-zone-picker__part {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .part-title {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: white;
+  }
+
+  .part-img {
+    width: 130px;
+    height: 133px;
+    border-radius: 50%;
+  }
+
+  .status {
+    text-align: center;
+    margin-top: 20px;
+    order: 2;
+  }
+
+  .status__title {
+    font-size: 56px;
+    color: white;
+    margin-bottom: 16px;
+  }
+
+  .status-refresh {
+    padding: 15px 62px 14px 60px;
+    font-size: 16px;
+    color: #1f3756;
+    background-color: white;
+    border: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+  }
+
+  .status-refresh:hover {
+    background-color: #dedede;
+  }
+}
+
+@media (max-width: 474px) {
+  .game-zone__container {
+    max-width: 311px;
+    column-gap: 51px;
+    row-gap: 15px;
+    background-image: url(../img/path-small.svg);
+  }
+
+  .game-zone__img {
+    width: 130px;
+    height: 133px;
+  }
+
+  .rules-btn {
+    bottom: 56px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 375px) {
+  .logo-smol {
+    width: 83px;
+    height: 48px;
+  }
+
+  .header__score {
+    border-radius: 4px;
+    min-width: 80px;
+  }
+
+  .score__inner {
+    padding: 10px;
+  }
+
+  .score__title {
+    font-size: 10px;
+    line-height: 12px;
+    letter-spacing: 1.56px;
+  }
+
+  .score__text {
+    font-size: 40px;
+    font-weight: 700;
+  }
 }
